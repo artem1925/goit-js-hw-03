@@ -1,15 +1,7 @@
-function makeTransaction(quantity, pricePerDroid) {
-    // Обчислюємо загальну вартість замовлення
-    const totalCost = quantity * pricePerDroid;
-
-    // Створюємо рядок з повідомленням
-    const message = `You ordered ${quantity} droids worth ${totalCost} credits!`;
-
-    // Повертаємо рядок
-    return message;
+function slugify(title) {
+    return title
+        .toLowerCase() // Перетворюємо всі символи на нижній регістр
+        .trim() // Видаляємо пробіли на початку та в кінці рядка
+        .replace(/\s+/g, '-') // Замінюємо всі пробіли на тире
+        .replace(/[^a-z0-9-]/g, ''); // Видаляємо всі символи, крім літер, цифр та тире
 }
-
-// Приклад виклику функції
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
